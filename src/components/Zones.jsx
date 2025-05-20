@@ -93,29 +93,53 @@ const Zones = () => {
         <h2 className="h4 text-muted">14 Zones to Explore</h2>
       </div>
 
+      <div className=" d-flex justify-content-center mb-4 gap-3">
+        <button style={{ border: "none" }} className=" text-white">
+          Explore
+        </button>
+        <button className="btn btn-primary">Book ticket</button>
+      </div>
       <div className="row g-4">
-        {zones.map((zone, index) => (
-          <div className="col-6 col-md-4 col-lg-3" key={index}>
-            <a href={zone.link} className="text-decoration-none text-dark">
-              <div className="position-relative overflow-hidden rounded border">
-                <img
-                  src={zone.img}
-                  alt={zone.title}
-                  className="img-fluid w-100"
-                  style={{ height: "250px", objectFit: "cover" }}
-                />
-                <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 text-white p-2">
+        <div className="row g-4">
+          {zones.map((zone, index) => (
+            <div className="col-6 col-md-4 col-lg-3" key={index}>
+              <a href={zone.link} className="text-decoration-none text-dark">
+                {index === 0 && (
+                  <div
+                    style={{
+                      backgroundColor: "green",
+                      color: "white",
+                      textAlign: "center",
+                    }}
+                  >
+                    NEW
+                  </div>
+                )}
+
+                <div
+                  className={`position-relative overflow-hidden rounded border ${
+                    index === 0 ? "border-success border-1" : ""
+                  }`}
+                >
                   <img
-                    src={zone.logo}
-                    alt={`${zone.title} logo`}
-                    className="mb-2"
-                    style={{ maxWidth: "20%" }}
+                    src={zone.img}
+                    alt={zone.title}
+                    className="img-fluid w-100"
+                    style={{ height: "250px", objectFit: "cover" }}
                   />
+                  <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 text-white p-2">
+                    <img
+                      src={zone.logo}
+                      alt={`${zone.title} logo`}
+                      className="mb-2"
+                      style={{ maxWidth: "20%" }}
+                    />
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        ))}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

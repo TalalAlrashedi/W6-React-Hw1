@@ -28,19 +28,16 @@ const Navbar = () => {
 
           <a
             className="btn btn-primary w-100 mb-3"
-
             target="_blank"
             rel="noopener noreferrer"
           >
             View Booklet
           </a>
-          <button className="btn btn-link text-white text-uppercase w-100 mb-3">
+          <a style={{ color: "white", textDecoration: "none" }} href="">
             العربية
-          </button>
-
+          </a>
         </details>
 
-        {/* Center logo */}
         <div className="text-center mx-auto">
           <a href="/" className="d-inline-block">
             <img
@@ -52,14 +49,12 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Right buttons (desktop only) */}
-        <div className="d-none d-md-flex gap-2 align-items-center">
-          <button className="btn btn-link text-white text-uppercase">
+        <div className="d-none d-md-flex gap-4 align-items-center">
+        <a  style={{ color: "white", textDecoration: "none" }} href="">
             العربية
-          </button>
+          </a>
           <a
             className="btn btn-primary"
-
             target="_blank"
             rel="noopener noreferrer"
           >
